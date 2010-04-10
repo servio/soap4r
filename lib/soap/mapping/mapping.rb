@@ -540,7 +540,7 @@ module Mapping
   private
 
     def class_schema_variable(sym, klass)
-      var = "@@#{sym}"
+      var = "@@#{sym}".to_sym
       klass.class_variables.include?(var) ? klass.class_eval(var) : nil
     end
 
